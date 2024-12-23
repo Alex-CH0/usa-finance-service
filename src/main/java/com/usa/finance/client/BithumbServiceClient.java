@@ -3,6 +3,9 @@ package com.usa.finance.client;
 import com.usa.finance.domain.Market;
 import com.usa.finance.domain.MarketCurrentPrice;
 import com.usa.finance.domain.MarketCandle;
+import com.usa.finance.dto.MarketCandleDto;
+import com.usa.finance.dto.MarketCurrentPriceDto;
+import com.usa.finance.dto.MarketDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,11 +19,11 @@ import java.util.Map;
 public interface BithumbServiceClient {
 
     @GetMapping("/market/all")
-    List<Market> getAllMarket();
+    List<MarketDto> getAllMarket();
 
 
     @GetMapping("/candles/minutes/{unit}")
-    List<MarketCandle> getCandlesMin(
+    List<MarketCandleDto> getCandlesMin(
             @PathVariable int unit,
             @RequestParam String market,
             @RequestParam String to,
@@ -29,13 +32,13 @@ public interface BithumbServiceClient {
 
 
     @GetMapping("/candles/days")
-    List<MarketCandle> getCandlesDay(
+    List<MarketCandleDto> getCandlesDay(
             @SpringQueryMap Map<String, Object> queryParameters
     );
 
 
     @GetMapping("/candles/weeks")
-    List<MarketCandle> getCandlesWeek(
+    List<MarketCandleDto> getCandlesWeek(
             @RequestParam String market,
             @RequestParam String to,
             @RequestParam int count
@@ -43,14 +46,14 @@ public interface BithumbServiceClient {
 
 
     @GetMapping("/candles/months")
-    List<MarketCandle> getCandlesMonth(
+    List<MarketCandleDto> getCandlesMonth(
             @RequestParam String market,
             @RequestParam String to,
             @RequestParam int count
     );
 
     @GetMapping("/ticker")
-    List<MarketCurrentPrice> getCurrentPrice(
+    List<MarketCurrentPriceDto> getCurrentPrice(
             @RequestParam String markets
     );
 }

@@ -4,6 +4,9 @@ import com.usa.finance.client.BithumbServiceClient;
 import com.usa.finance.domain.Market;
 import com.usa.finance.domain.MarketCurrentPrice;
 import com.usa.finance.domain.MarketCandle;
+import com.usa.finance.dto.MarketCandleDto;
+import com.usa.finance.dto.MarketCurrentPriceDto;
+import com.usa.finance.dto.MarketDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,12 +26,12 @@ public class BithumbApiController {
     private final BithumbServiceClient bithumbServiceClient;
 
     @GetMapping("/market")
-    public List<Market> getMarket() {
+    public List<MarketDto> getMarket() {
         return bithumbServiceClient.getAllMarket();
     }
 
     @GetMapping("/candle/{market}")
-    public List<MarketCandle> getCandles(@PathVariable String market, @RequestParam int count) {
+    public List<MarketCandleDto> getCandles(@PathVariable String market, @RequestParam int count) {
         Map<String, Object> queryParam = new HashMap<>();
         queryParam.put("market", market);
         queryParam.put("count", count);
@@ -36,7 +39,7 @@ public class BithumbApiController {
     }
 
     @GetMapping("/current/{market}")
-    public List<MarketCurrentPrice> getCurrentPrice(@PathVariable String markets) {
+    public List<MarketCurrentPriceDto> getCurrentPrice(@PathVariable String markets) {
         return bithumbServiceClient.getCurrentPrice(markets);
     }
 }

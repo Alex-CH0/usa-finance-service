@@ -5,4 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface MarketRepository extends JpaRepository<Market, Integer> {
     Market findByMarketId(Integer id);
+
+    Market findByEnglishName(String englishName);
+
+    Market findByKoreanName(String koreanName);
 }
