@@ -17,6 +17,8 @@ class FinanceApplicationTests {
 	@Transactional
 	void saveMarket(){
 
+
+
 		MarketDto marketDto = new MarketDto();
 	}
 
