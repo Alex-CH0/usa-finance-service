@@ -4,6 +4,17 @@ server:
 spring:
   application:
     name: finance-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/fi_db
+    username: admin_alex
+    password: 1231
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.PostgreSQL10Dialect
 
 # Eureka
 eureka:

@@ -2,7 +2,7 @@ package com.usa.finance.client;
 
 import com.usa.finance.domain.Market;
 import com.usa.finance.domain.MarketCurrentPrice;
-import com.usa.finance.domain.MarketPrice;
+import com.usa.finance.domain.MarketCandle;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +20,7 @@ public interface BithumbServiceClient {
 
 
     @GetMapping("/candles/minutes/{unit}")
-    List<MarketPrice> getCandlesMin(
+    List<MarketCandle> getCandlesMin(
             @PathVariable int unit,
             @RequestParam String market,
             @RequestParam String to,
@@ -29,13 +29,13 @@ public interface BithumbServiceClient {
 
 
     @GetMapping("/candles/days")
-    List<MarketPrice> getCandlesDay(
+    List<MarketCandle> getCandlesDay(
             @SpringQueryMap Map<String, Object> queryParameters
     );
 
 
     @GetMapping("/candles/weeks")
-    List<MarketPrice> getCandlesWeek(
+    List<MarketCandle> getCandlesWeek(
             @RequestParam String market,
             @RequestParam String to,
             @RequestParam int count
@@ -43,7 +43,7 @@ public interface BithumbServiceClient {
 
 
     @GetMapping("/candles/months")
-    List<MarketPrice> getCandlesMonth(
+    List<MarketCandle> getCandlesMonth(
             @RequestParam String market,
             @RequestParam String to,
             @RequestParam int count

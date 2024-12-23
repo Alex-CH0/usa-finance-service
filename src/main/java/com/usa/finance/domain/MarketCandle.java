@@ -3,7 +3,7 @@ package com.usa.finance.domain;
 import lombok.Data;
 
 @Data
-public class MarketPrice {
+public class MarketCandle {
 
     private String market;
 

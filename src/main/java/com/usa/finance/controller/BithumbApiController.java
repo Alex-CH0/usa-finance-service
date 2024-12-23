@@ -3,7 +3,7 @@ package com.usa.finance.controller;
 import com.usa.finance.client.BithumbServiceClient;
 import com.usa.finance.domain.Market;
 import com.usa.finance.domain.MarketCurrentPrice;
-import com.usa.finance.domain.MarketPrice;
+import com.usa.finance.domain.MarketCandle;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,7 +28,7 @@ public class BithumbApiController {
     }
 
     @GetMapping("/candle/{market}")
-    public List<MarketPrice> getCandles(@PathVariable String market, @RequestParam int count) {
+    public List<MarketCandle> getCandles(@PathVariable String market, @RequestParam int count) {
         Map<String, Object> queryParam = new HashMap<>();
         queryParam.put("market", market);
         queryParam.put("count", count);
