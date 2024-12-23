@@ -5,7 +5,7 @@ spring:
   application:
     name: finance-service
   datasource:
-    url: jdbc:postgresql://localhost:5432/fi_db
+    url: jdbc:postgresql://localhost:5432/devalex
     username: admin_alex
     password: 1231
     driver-class-name: org.postgresql.Driver
