@@ -21,5 +21,20 @@ public class MarketService {
                 .market_warning(marketDto.getMarket_warning()).build()).getMarketId();
     }
 
+    public Market findById(Long marketId) {
+        return marketRepository.findByMarketId(marketId)
+                .orElseThrow(() -> new IllegalArgumentException("Market Not Found"));
+    }
+
+    public Market findByEnglishName(String marketEng) {
+        return marketRepository.findByEnglishName(marketEng)
+                .orElseThrow(() -> new IllegalArgumentException("Market Not Found"));
+    }
+
+    public Market findByKoreanName(String marketKor) {
+        return marketRepository.findByKoreanName(marketKor)
+                .orElseThrow(() -> new IllegalArgumentException("Market Not Found"));
+    }
+
 
 }

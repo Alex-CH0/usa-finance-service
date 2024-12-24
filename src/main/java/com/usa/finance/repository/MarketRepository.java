@@ -3,10 +3,12 @@ package com.usa.finance.repository;
 import com.usa.finance.domain.Market;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.Optional;
+
 public interface MarketRepository extends JpaRepository<Market, Integer> {
-    Market findByMarketId(Integer id);
+    Optional<Market> findByMarketId(Long id);
 
-    Market findByEnglishName(String englishName);
+    Optional<Market> findByEnglishName(String englishName);
 
-    Market findByKoreanName(String koreanName);
+    Optional<Market> findByKoreanName(String koreanName);
 }
