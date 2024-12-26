@@ -22,22 +22,22 @@ public class Market {
 
     @Comment("거래 대상 디지털 자산 한글명")
     @Column(nullable = false)
-    private String korean_name;
+    private String koreanName;
 
     @Comment("거래 대상 디지털 자산 영문명")
     @Column(nullable = false)
-    private String english_name;
+    private String englishName;
 
     @Comment("유의 종목 여부: NONE or CAUTION")
     @Column(columnDefinition = "boolean default false")
-    private boolean market_warning;
+    private boolean marketWarning;
 
     @Builder
     public Market(String market_warning, String english_name, String korean_name, String market) {
 
-        this.market_warning = market_warning.equals("CAUTION");
-        this.english_name = english_name;
-        this.korean_name = korean_name;
+        this.marketWarning = market_warning.equals("CAUTION");
+        this.englishName = english_name;
+        this.koreanName = korean_name;
         this.market = market;
     }
 }

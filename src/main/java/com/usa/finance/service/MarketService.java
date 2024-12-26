@@ -16,9 +16,9 @@ public class MarketService {
 
         return marketRepository.save(Market.builder()
                 .market(marketDto.getMarket())
-                .korean_name(marketDto.getKorean_name())
-                .english_name(marketDto.getEnglish_name())
-                .market_warning(marketDto.getMarket_warning()).build()).getMarketId();
+                .korean_name(marketDto.getKoreanName())
+                .english_name(marketDto.getEnglishName())
+                .market_warning(marketDto.getMarketWarning()).build()).getMarketId();
     }
 
     public Market findById(Long marketId) {
