@@ -1,10 +1,9 @@
 package com.usa.finance.domain;
 
 import jakarta.persistence.*;
-import lombok.*;
-import org.hibernate.annotations.ColumnDefault;
+import lombok.Builder;
+import lombok.Getter;
 import org.hibernate.annotations.Comment;
-import org.springframework.util.Assert;
 
 @Getter
 @Entity

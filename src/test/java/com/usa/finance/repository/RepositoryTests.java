@@ -19,10 +19,6 @@ public class RepositoryTests {
     @Autowired
     private MarketRepository marketRepository;
 
-    @Autowired
-    private MarketService marketService;
-
-
     @Test
     @DisplayName("정상 종목 조회 케이스")
     @Transactional

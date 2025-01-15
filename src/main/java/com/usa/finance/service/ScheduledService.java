@@ -16,7 +16,6 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class ScheduledService {
 
-    @Scheduled(cron = "")
     public void updateDailyPrice(){
 
     }
