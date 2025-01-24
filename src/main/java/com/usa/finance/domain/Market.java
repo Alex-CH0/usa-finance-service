@@ -3,11 +3,13 @@ package com.usa.finance.domain;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Comment;
 
 @Getter
 @Entity
 @Table(name = "market", schema = "finance")
+@NoArgsConstructor
 public class Market {
 
     @Id

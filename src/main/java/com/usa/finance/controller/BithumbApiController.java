@@ -1,9 +1,6 @@
 package com.usa.finance.controller;
 
 import com.usa.finance.client.BithumbServiceClient;
-import com.usa.finance.domain.Market;
-import com.usa.finance.domain.MarketCurrentPrice;
-import com.usa.finance.domain.MarketCandle;
 import com.usa.finance.dto.MarketCandleDto;
 import com.usa.finance.dto.MarketCurrentPriceDto;
 import com.usa.finance.dto.MarketDto;
